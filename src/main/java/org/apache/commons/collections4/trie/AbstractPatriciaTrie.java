@@ -1717,7 +1717,7 @@ public abstract class AbstractPatriciaTrie<K, V> extends AbstractBitwiseTrie<K, 
      * Returns a key-value mapping associated with the greatest key
      * strictly less than the given key, or null if there is no such key.
      */
-    TrieEntry<K, V> lowerEntry(final K key) {
+    public TrieEntry<K, V> lowerEntry(final K key) {
         // Basically:
         // Follow the steps of adding an entry, but instead...
         //
@@ -1776,7 +1776,7 @@ public abstract class AbstractPatriciaTrie<K, V> extends AbstractBitwiseTrie<K, 
      * Returns the entry lexicographically after the given entry.
      * If the given entry is null, returns the first node.
      */
-    TrieEntry<K, V> nextEntry(final TrieEntry<K, V> node) {
+    public TrieEntry<K, V> nextEntry(final TrieEntry<K, V> node) {
         if (node == null) {
             return firstEntry();
         }
@@ -1955,7 +1955,7 @@ public abstract class AbstractPatriciaTrie<K, V> extends AbstractBitwiseTrie<K, 
      *
      * @param start  the start entry
      */
-    TrieEntry<K, V> previousEntry(final TrieEntry<K, V> start) {
+    public TrieEntry<K, V> previousEntry(final TrieEntry<K, V> start) {
         if (start.predecessor == null) {
             throw new IllegalArgumentException("must have come from somewhere!");
         }
